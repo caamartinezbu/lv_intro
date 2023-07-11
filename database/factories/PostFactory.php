@@ -19,7 +19,7 @@ class PostFactory extends Factory
         return [
             'title'=>$title=$this->faker->sentence(),
             'slug'=>Str::slug($title),
-            'body'=>$this->faker->text(220),
+            'body'=>$this->faker->text(2200),
             ];
             }
 }

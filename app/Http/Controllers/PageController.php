@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -9,16 +9,15 @@ class PageController extends Controller
    public function home(){
     return view('home');
    }
+
    public function blog(){
-    $posts = [
-        ['id' => 1, 'title' => 'PHP', 'slug' => 'php'],
-        ['id' => 2, 'title' => 'LARAVEL', 'slug' => 'laravel'],
-    ];
+    $posts = Post::get(); // traeme todas los post
 
     return view('blog', ['posts' => $posts]);
    }
-   public function post($slug){
-    $post = $slug;
+
+   public function post(Post $post){
+   
     return view('post', ['post' => $post]);
    }
 }
