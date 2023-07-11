@@ -5,4 +5,6 @@
 
 <p>{{$post->body}}</p>
 
+<p>{{$post->created_at}}</p>
+
 @endsection

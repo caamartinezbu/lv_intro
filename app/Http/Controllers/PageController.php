@@ -1,23 +1,32 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-   public function home(){
-    return view('home');
-   }
+    public function home()
+    {
+        return view('home');
+    }
 
-   public function blog(){
-    $posts = Post::get(); // traeme todas los post
+    public function blog()
+    {
+        //$posts = Post::get(); // traeme todas los post
+        //$post = Post::first();
+        //$post = Post::find(25);
+        //dd($post);
 
-    return view('blog', ['posts' => $posts]);
-   }
+        $posts = Post::latest()->paginate();
 
-   public function post(Post $post){
-   
-    return view('post', ['post' => $post]);
-   }
+        return view('blog', ['posts' => $posts]);
+    }
+
+    public function post(Post $post)
+    {
+
+        return view('post', ['post' => $post]);
+    }
 }
