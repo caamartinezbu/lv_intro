@@ -16,7 +16,10 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
+
+        //Aqui agregamos nuestros campos a la abla para que inserte datos falsos
         return [
+            'user_id'=>1,
             'title'=>$title=$this->faker->sentence(),
             'slug'=>Str::slug($title),
             'body'=>$this->faker->text(2200),
