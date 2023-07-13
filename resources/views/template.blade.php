@@ -19,14 +19,8 @@
             <a href="{{route('login')}}">Login</a>
 
         @endauth
-
-
-
     </p>
-
     <hr>
-
-
     @yield ('content')
 
 </body>
