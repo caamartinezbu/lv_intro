@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('body');
             $table->unsignedBigInteger('user_id');//creamos un campo sin signos que solo acepte numeros positivos,y que ademas acepte y sea del tipo entero integer 
             $table->foreign('user_id')->references('id')->on('users');
+            //$table->foreign('user_id')->constrained(); simplificando es lo mismo que arriba
             $table->timestamps(); // metodo de fechas crea campos para  fechas de creacion y actualizacion 
         });
     }

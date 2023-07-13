@@ -1,6 +1,6 @@
 @extends('template')
 
 @section('content')
-<h1>Home se crea con views/home.blade.php</h1>
+<h1>Home </h1>
 
 @endsection
