@@ -17,7 +17,19 @@
                         <td class="px-6 py-4"> 
                             <a href="" class="text-indigo-600">Editar</a>
                         </td>
-                        <td class="px-6 py-4"> Eliminar</td>
+                        <td class="px-6 py-4"> 
+
+
+                       <form action="{{route('post.destroy', $post)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                    <input type="submit"
+                    value="Eliminar" 
+                    class="bg-red-800 text-white rounded px-4 py-2"
+                    onclick="return confirm('Desea Eliminar')">
+
+                       </form>
+                        </td>
                     </tr>
                 
                     
