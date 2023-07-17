@@ -14,11 +14,11 @@ class PostController extends Controller
         return view('posts.index', ['posts' => Post::latest()->paginate() ]);
     }
 
-//creamos el metodo eliminar, para eliminar publicaciones y le decimos que nos etorne atras en las rutas usando el enrutamiento de laravel nativo
+//creamos el método eliminar, para eliminar publicaciones y le decimos que nos etorne atras en las rutas usando el en rutamiento de laravel nativo
     
 
-    public function create(){
-        return view('posts.create');
+    public function create(Post $post){
+        return view('posts.create',['post'=>$post]);
     }
 
 
