@@ -27,6 +27,6 @@ class PageController extends Controller
     public function post(Post $post)
     {
 
-        return view('post', ['post' => $post]);
+        return view('posts', ['post' => $post]);
     }
 }
