@@ -18,8 +18,14 @@
                 <a href="{{ route('home')}}">
                     <img src="{{ asset('images/logo1.png')}}" alt="" class="h-12">
                 </a>
-                    <form action="">
-                        <input type="text" placeholder="Buscar">
+                    <form action="{{ route('home')}}" method="GET" class="flex-grow">
+                        <input 
+                        type="text" 
+                        placeholder="Buscar" 
+                        name="search"
+                        value="{{ request('search')}}"
+                        class="border border-gray-200 rounded px-4 w-1/2"
+                        >
                     </form>
              
             </div>
