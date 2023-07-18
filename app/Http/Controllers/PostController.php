@@ -34,6 +34,7 @@ class PostController extends Controller
          ],[
             'title.required'=>'Debe ingresar el título.',
             'slug.required'=>'Debe ingresar una URL diferente',
+            'slug.unique'=>'La URl ya existe.',
             'body.required'=>'Debe ingresar el contenido del post.',
         ]);
         $post = $request->user()->posts()->create([
@@ -58,6 +59,11 @@ class PostController extends Controller
             'slug'=> 'required|unique:posts,slug,' . $post->id, //unique:table,column,except,id',
             'body'=> 'required',
 
+        ],[
+            'title.required'=>'Debe ingresar el título.',
+            'slug.required'=>'Debe ingresar una URL diferente',
+            'slug.unique'=>'La URl ya existe.',
+            'body.required'=>'Debe ingresar el contenido del post.',
         ]);
 
         $post->update([
