@@ -31,14 +31,21 @@
     
             @endauth
     </header>
+    <div class="opacity-60 h-5px mb-8" 
+    style="background: linear-gradient(to 
+        right,
+        rgba(200,200,200,0) 0%,
+        rgb(192, 24, 24) 30%,
+        rgba(200,200,200,1) 70%,
+        rgba(200,200,200,0) 100%,
+    );"></div>
+
+
     @yield ('content')
-</div>
-<!-- 
-    <p>
-        <a href="{{ route('home')}}">Home</a>
-        <a href="{{ route('blog')}}">Blog</a>
-       
+    <p class="py-16">
+        <img src="{{ asset('images/logo1.png')}}"  class="h-12 mx-auto">
     </p>
-    <hr> -->
+</div>
+
 </body>
 </html>
